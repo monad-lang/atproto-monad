@@ -1,0 +1,25 @@
+# Identity: handle and DID syntax, DID documents, and the pure halves of
+# handle resolution (DNS-over-HTTPS TXT, /.well-known/atproto-did,
+# resolveHandle). The transports are the driver's.
+[mote]
+name = "atproto_identity"
+version = "0.1.0"
+edition = "2026"
+
+[lib]
+path = "src/lib.mo"
+
+[dependencies.init]
+workspace = true
+
+[dependencies.std]
+workspace = true
+
+[dependencies.json]
+workspace = true
+
+[dependencies.atproto_common]
+workspace = true
+
+[affine]
+mode = "warn"

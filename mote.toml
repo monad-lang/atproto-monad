@@ -1,0 +1,71 @@
+# atproto-monad: AT Protocol libraries for Monad.
+#
+# A virtual workspace. Each concern is its own mote, so an app pulls in only
+# what it uses and a pure mote never drags a browser or native driver into
+# its link:
+#
+#   atproto_common    JSON reading, JSON writing helpers, JWS/base64url, S256
+#   atproto_identity  handle/DID syntax, DID documents, handle resolution
+#   atproto_oauth     PKCE, DPoP, AS metadata, PAR, tokens, client metadata,
+#                     and the session/pending-login codec
+#   atproto_repo      com.atproto.repo record requests and responses
+#   atproto_web       the begin/poll login and record driver on web_wasm
+#
+# Everything except atproto_web is pure and builds natively, so
+# `monad test motes/<name>` runs without a browser.
+#
+# Members are named, not globbed, for the same reason as the monad repo:
+# a deterministic order, and adding a mote is a reviewed line.
+#
+# Every monad dependency is pinned to the installed compiler's revision
+# (`monad version` == 6ff8cdb); `monad build` refuses a skewed pin.
+
+[workspace]
+members = [
+  "motes/atproto_common",
+  "motes/atproto_identity",
+  "motes/atproto_oauth",
+  "motes/atproto_repo",
+  "motes/atproto_web",
+]
+
+[workspace.dependencies.init]
+git = "https://github.com/monad-lang/monad.git"
+rev = "6ff8cdb042799bb7dfa9222a9ecc258adc2bb69e"
+subdir = "init"
+
+[workspace.dependencies.std]
+git = "https://github.com/monad-lang/monad.git"
+rev = "6ff8cdb042799bb7dfa9222a9ecc258adc2bb69e"
+subdir = "std"
+
+[workspace.dependencies.runtime]
+git = "https://github.com/monad-lang/monad.git"
+rev = "6ff8cdb042799bb7dfa9222a9ecc258adc2bb69e"
+subdir = "runtime"
+
+[workspace.dependencies.json]
+git = "https://github.com/monad-lang/monad.git"
+rev = "6ff8cdb042799bb7dfa9222a9ecc258adc2bb69e"
+subdir = "motes/json"
+
+[workspace.dependencies.web_wasm]
+git = "https://github.com/monad-lang/monad.git"
+rev = "6ff8cdb042799bb7dfa9222a9ecc258adc2bb69e"
+subdir = "motes/web_wasm"
+
+[workspace.dependencies.atproto_common]
+path = "motes/atproto_common"
+
+[workspace.dependencies.atproto_identity]
+path = "motes/atproto_identity"
+
+[workspace.dependencies.atproto_oauth]
+path = "motes/atproto_oauth"
+
+[workspace.dependencies.atproto_repo]
+path = "motes/atproto_repo"
+
+[workspace.dependencies.atproto_web]
+path = "motes/atproto_web"
+

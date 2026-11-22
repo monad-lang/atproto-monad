@@ -1,0 +1,21 @@
+# Shared pure helpers: reading JSON responses, writing JSON strings, JWS
+# signing inputs and S256. No IO, no browser types.
+[mote]
+name = "atproto_common"
+version = "0.1.0"
+edition = "2026"
+
+[lib]
+path = "src/lib.mo"
+
+[dependencies.init]
+workspace = true
+
+[dependencies.std]
+workspace = true
+
+[dependencies.json]
+workspace = true
+
+[affine]
+mode = "warn"

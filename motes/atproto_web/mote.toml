@@ -1,0 +1,43 @@
+# The browser driver: the login, record and sign-out machine, advanced one
+# begin/poll step at a time on web_wasm (Fetch, WebCrypto, IndexedDB
+# KeyStore, localStorage). The machine (machine.mo) is pure and lives in the
+# app's model; web.mo is the only module that does IO.
+#
+# The `runtime` entry pins the C half of the web ABI to the same revision.
+[mote]
+name = "atproto_web"
+version = "0.1.0"
+edition = "2026"
+
+[lib]
+path = "src/lib.mo"
+
+[dependencies.init]
+workspace = true
+
+[dependencies.std]
+workspace = true
+
+[dependencies.json]
+workspace = true
+
+[dependencies.web_wasm]
+workspace = true
+
+[dependencies.runtime]
+workspace = true
+
+[dependencies.atproto_common]
+workspace = true
+
+[dependencies.atproto_identity]
+workspace = true
+
+[dependencies.atproto_oauth]
+workspace = true
+
+[dependencies.atproto_repo]
+workspace = true
+
+[affine]
+mode = "warn"

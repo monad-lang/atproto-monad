@@ -1,0 +1,24 @@
+# com.atproto.repo records, pure: getRecord/putRecord URLs and bodies,
+# the swapRecord compare-and-swap, and the XRPC error classifiers.
+[mote]
+name = "atproto_repo"
+version = "0.1.0"
+edition = "2026"
+
+[lib]
+path = "src/lib.mo"
+
+[dependencies.init]
+workspace = true
+
+[dependencies.std]
+workspace = true
+
+[dependencies.json]
+workspace = true
+
+[dependencies.atproto_common]
+workspace = true
+
+[affine]
+mode = "warn"

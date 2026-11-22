@@ -1,0 +1,25 @@
+# The atproto OAuth profile, pure: PKCE (S256), DPoP proofs, AS and
+# resource metadata with the mix-up checks, PAR, the callback, the token
+# and refresh responses, client metadata, and the persisted session codec.
+[mote]
+name = "atproto_oauth"
+version = "0.1.0"
+edition = "2026"
+
+[lib]
+path = "src/lib.mo"
+
+[dependencies.init]
+workspace = true
+
+[dependencies.std]
+workspace = true
+
+[dependencies.json]
+workspace = true
+
+[dependencies.atproto_common]
+workspace = true
+
+[affine]
+mode = "warn"
