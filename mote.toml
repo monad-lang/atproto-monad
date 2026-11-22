@@ -18,7 +18,7 @@
 # a deterministic order, and adding a mote is a reviewed line.
 #
 # Every monad dependency is pinned to the installed compiler's revision
-# (`monad version` == 6ff8cdb); `monad build` refuses a skewed pin.
+# (`monad version` == aaf39e36); `monad build` refuses a skewed pin.
 
 [workspace]
 members = [
@@ -31,27 +31,27 @@ members = [
 
 [workspace.dependencies.init]
 git = "https://github.com/monad-lang/monad.git"
-rev = "6ff8cdb042799bb7dfa9222a9ecc258adc2bb69e"
+rev = "aaf39e36ff48349dc2f92133bb25d235dd33d447"
 subdir = "init"
 
 [workspace.dependencies.std]
 git = "https://github.com/monad-lang/monad.git"
-rev = "6ff8cdb042799bb7dfa9222a9ecc258adc2bb69e"
+rev = "aaf39e36ff48349dc2f92133bb25d235dd33d447"
 subdir = "std"
 
 [workspace.dependencies.runtime]
 git = "https://github.com/monad-lang/monad.git"
-rev = "6ff8cdb042799bb7dfa9222a9ecc258adc2bb69e"
+rev = "aaf39e36ff48349dc2f92133bb25d235dd33d447"
 subdir = "runtime"
 
 [workspace.dependencies.json]
 git = "https://github.com/monad-lang/monad.git"
-rev = "6ff8cdb042799bb7dfa9222a9ecc258adc2bb69e"
+rev = "aaf39e36ff48349dc2f92133bb25d235dd33d447"
 subdir = "motes/json"
 
 [workspace.dependencies.web_wasm]
 git = "https://github.com/monad-lang/monad.git"
-rev = "6ff8cdb042799bb7dfa9222a9ecc258adc2bb69e"
+rev = "aaf39e36ff48349dc2f92133bb25d235dd33d447"
 subdir = "motes/web_wasm"
 
 [workspace.dependencies.atproto_common]
