@@ -17,8 +17,10 @@
 # Members are named, not globbed, for the same reason as the monad repo:
 # a deterministic order, and adding a mote is a reviewed line.
 #
-# Every monad dependency is pinned to the installed compiler's revision
-# (`monad version` == aaf39e36); `monad build` refuses a skewed pin.
+# Every monad dependency tracks monad main; `mote.lock` names the commit that
+# was built and tested. (Tracked rather than rev-pinned so a new toolchain —
+# like the one that carries `init::math` — lands here with one `monad update`
+# instead of a second manual bump.)
 
 [workspace]
 members = [
@@ -31,27 +33,27 @@ members = [
 
 [workspace.dependencies.init]
 git = "https://github.com/monad-lang/monad.git"
-rev = "aaf39e36ff48349dc2f92133bb25d235dd33d447"
+branch = "main"
 subdir = "init"
 
 [workspace.dependencies.std]
 git = "https://github.com/monad-lang/monad.git"
-rev = "aaf39e36ff48349dc2f92133bb25d235dd33d447"
+branch = "main"
 subdir = "std"
 
 [workspace.dependencies.runtime]
 git = "https://github.com/monad-lang/monad.git"
-rev = "aaf39e36ff48349dc2f92133bb25d235dd33d447"
+branch = "main"
 subdir = "runtime"
 
 [workspace.dependencies.json]
 git = "https://github.com/monad-lang/monad.git"
-rev = "aaf39e36ff48349dc2f92133bb25d235dd33d447"
+branch = "main"
 subdir = "motes/json"
 
 [workspace.dependencies.web_wasm]
 git = "https://github.com/monad-lang/monad.git"
-rev = "aaf39e36ff48349dc2f92133bb25d235dd33d447"
+branch = "main"
 subdir = "motes/web_wasm"
 
 [workspace.dependencies.atproto_common]
